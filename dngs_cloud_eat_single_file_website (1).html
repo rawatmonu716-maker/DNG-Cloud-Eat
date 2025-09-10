@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DNG's Cloud Eat — Fresh Indian Cloud Kitchen (Rishikesh)</title>
+  <style>
+    :root{--red:#c91818;--black:#0b0b0b;--green:#1e7a3b;--muted:#f4f4f4}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0;color:#111;background:var(--muted)}
+    header{background:linear-gradient(90deg, rgba(200,24,24,0.98), rgba(30,122,59,0.9));color:white;padding:28px 18px}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .brand img{width:72px;height:72px;object-fit:contain;background:white;padding:8px;border-radius:12px}
+    h1{margin:0;font-size:28px}
+    .tagline{opacity:0.95;margin-top:6px}
+
+    nav{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:8px;background:rgba(0,0,0,0.12)}
+
+    main{padding:28px 0}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:24px}
+
+    .card{background:white;border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(10,10,10,0.06)}
+    .partner-list ul{list-style:none;padding:0;margin:0}
+    .partner-list li{padding:10px;border-bottom:1px dashed #eee;display:flex;justify-content:space-between;align-items:center}
+    .partner-list button{background:var(--black);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+
+    .menu-section h2{display:flex;justify-content:space-between;align-items:center;margin:0 0 12px 0}
+    .menu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .menu-item{padding:12px;border-radius:10px;border:1px solid #fafafa}
+    .menu-item h3{margin:0;font-size:16px}
+    .menu-item p{margin:6px 0 0 0;color:#555;font-size:13px}
+
+    .map{height:220px;border-radius:10px;overflow:hidden}
+    footer{margin-top:26px;padding:18px 0;text-align:center;color:#444}
+
+    /* responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr}
+      .brand img{width:56px;height:56px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <!-- Updated to use provided logo file -->
+        <img src="logo.png" alt="DNG's Cloud Eat logo">
+        <div>
+          <h1>DNG's Cloud Eat</h1>
+          <div class="tagline">A cloud kitchen serving fresh, soulful Indian meals across Rishikesh — fast delivery to your home, office or room.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#partners">Partners</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <section class="card">
+        <h2 id="partners">Our Partners</h2>
+        <p class="muted">We collaborate with trusted local kitchens to bring you flavourful Indian food. More partners coming — stay tuned!</p>
+
+        <div class="partner-list" style="margin-top:12px">
+          <ul>
+            <li>
+              <div>
+                <strong>Shri Vishnu Bhojnalaya</strong>
+                <div style="font-size:12px;color:#666">Authentic homestyle curries & tandoori flavours</div>
+              </div>
+              <div>
+                <button onclick="showPartner('vishnu')">View</button>
+              </div>
+            </li>
+            <li style="opacity:0.8">
+              <div>
+                <strong>Other partners</strong>
+                <div style="font-size:12px;color:#666">Coming soon — stay tuned</div>
+              </div>
+              <div>
+                <button disabled>Stay tuned</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <hr style="margin:18px 0;border:none;border-top:1px solid #f0f0f0">
+
+        <div id="partner-detail" style="display:block">
+          <h3>Shri Vishnu Bhojnalaya — Partner Spotlight</h3>
+          <p style="color:#555">Shri Vishnu Bhojnalaya brings homely flavours with a tandoor touch. Fresh ingredients, classic techniques — made for comfort and celebration.</p>
+
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+            <div style="flex:1;min-width:160px" class="card">
+              <strong>Location</strong>
+              <div style="font-size:13px;margin-top:8px">Plus Code: <strong>476V+X8R, Rishikesh, Uttarakhand</strong></div>
+              <div style="margin-top:10px" class="map">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3494.000000000000!2d78.000000000000!3d30.000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAwJzAwLjAiTiA3OMKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1690000000000" style="width:100%;height:140px;border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+
+            <div style="flex:1;min-width:180px" class="card">
+              <strong>Hours</strong>
+              <div style="margin-top:8px;font-size:13px;color:#555">Open daily — Fresh batches cooked morning & evening. (Delivery times may vary)</div>
+
+              <div style="margin-top:12px">
+                <strong>Order / Enquiry</strong>
+                <div style="font-size:13px;color:#555;margin-top:6px">Call: <a href="tel:9368221552">93682 21552</a></div>
+                <div style="margin-top:8px"><a href="https://wa.me/919368221552?text=Hello%20DNG's%20Cloud%20Eat%2C%20I%20want%20to%20order" target="_blank" style="display:inline-block;margin-top:6px;background:#25D366;color:white;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600">Order on WhatsApp</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h3 id="menu">Menu — Indian Specials</h3>
+        <p style="margin-top:0;color:#666">Carefully chosen favourites — homely curries, buttery naans and hearty rice.</p>
+
+        <div class="menu-section" style="margin-top:12px">
+          <h2>Veg Curries</h2>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <h3>Paneer Butter Masala</h3>
+              <p>Silky tomato-cashew gravy with soft paneer cubes — classic comfort.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Matar Paneer</h3>
+              <p>Green peas and paneer in a mildly spiced gravy.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Matar Aloo</h3>
+              <p>Potato & peas simmered in fragrant masala.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Mushroom Masala</h3>
+              <p>Earthy mushrooms cooked in rich, aromatic gravy.</p>
+            </div>
+          </div>
+
+          <h2 style="margin-top:14px">Tandoori & Breads</h2>
+          <div class="menu-grid" style="margin-top:8px">
+            <div class="menu-item">
+              <h3>Tandoori Naans</h3>
+              <p>Soft, charred naans straight from the tandoor — plain or butter.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Paneer Tikka</h3>
+              <p>Marinated paneer skewers, smoky & tender.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Chaap</h3>
+              <p>Flavoursome soya/veg chaap with special masala (ask for veg/soya options).</p>
+            </div>
+          </div>
+
+          <h2 style="margin-top:14px">Rice & Dal</h2>
+          <div class="menu-grid" style="margin-top:8px">
+            <div class="menu-item">
+              <h3>Jeera Rice</h3>
+              <p>Fragrant basmati tempered with cumin.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Dal Makhani</h3>
+              <p>Slow-cooked black lentils in buttery, creamy sauce.</p>
+            </div>
+          </div>
+
+          <h2 style="margin-top:14px">Beverages</h2>
+          <div class="menu-grid" style="margin-top:8px">
+            <div class="menu-item">
+              <h3>Coca-Cola</h3>
+              <p>Chilled soft drink to pair with your meal.</p>
+            </div>
+            <div class="menu-item">
+              <h3>Mineral Water</h3>
+              <p>Pure bottled water.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;padding:12px;background:#fdf4f4;border:1px solid #f5c2c2;border-radius:10px">
+            <strong>Special Offer:</strong> Enjoy dining discounts up to <span style="color:var(--red)">40% OFF</span> — limited period only!
+          </div>
+        </div>
+
+        <hr style="margin:12px 0;border-top:1px solid #f6f6f6">
+        <div style="font-size:13px;color:#666">Only Indian dishes available. For catering or partner enquiries email: <a href="mailto:mohitrawat172000@gmail.com">mohitrawat172000@gmail.com</a></div>
+      </aside>
+    </div>
+
+    <section class="card" id="about" style="margin-top:18px">
+      <h2>About DNG's Cloud Eat</h2>
+      <p style="color:#555">DNG's Cloud Eat is a cloud kitchen concept that partners with local, trusted eateries to deliver fresh Indian meals across Rishikesh. We focus on authentic recipes, consistent quality, and quick delivery to homes, offices and rooms — perfect for every craving.</p>
+    </section>
+
+    <section class="card" id="contact" style="margin-top:18px">
+      <h2>Contact & Location</h2>
+      <p style="color:#555;margin-top:6px">Primary contact: <a href="tel:9368221552">93682 21552</a></p>
+      <p style="color:#555">Map Plus Code: <strong>476V+X8R, Rishikesh, Uttarakhand</strong></p>
+      <div style="margin-top:10px">
+        <a href="https://www.google.com/maps/search/?api=1&query=476V%2BX8R+Rishikesh" target="_blank">Open location in Google Maps</a>
+      </div>
+    </section>
+
+    <footer>
+      © <strong>DNG's Cloud Eat</strong> — Fresh · Fast · Homely · Delivery to Home, Office & Room
+    </footer>
+  </main>
+
+  <script>
+    function showPartner(id){
+      document.getElementById('partner-detail').scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
